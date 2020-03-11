@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+    <div class="invoice-detail-header">
+        <h1>Invoice</h1>
+
+        <span><a class="btn btn-secondary" href="{% url 'generate_pdf' invoice.pk  %}">Generate PDF</a></span>
+    </div>
+        <article>
+            <table class="invoice table">
+                <thead>
+                    <tr>
+                        <th colspan=5>The Invoice Header</th>
+                    </tr>
+                </thead>
+                <tfoot></tfoot>
+                <tbody>
+                    <tr>
+                        <td colspan=2>{{ user }} TODO: Add fullname here</td>
+
+                        <td colspan=3>{{ client }}<br/><br/>
+                            {{client.company}}  <br/>
+                            {{client.address1}} <br/>
+                            {{client.address2}} <br/>
+                            {{client.country}}  <br/>
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th>Item</th>
+                        <th>HRS/QTY</th>
+                        <th>Rate</th>
+                        <th>Tax</th>
+                        <th>Subtotal</th>
+                    </tr>
+                    <!-- Add a for loop here to dynamically add invoice items -->
+                    {% for item in invoice_items %}
+                        <tr>
+                            <td> {{ item.item }} </td>
+                            <td> {{ item.quantity }} </td>
+                            <td> {{ item.rate }} </td>
+                            <td>Rate</td>
+                            <td> ${{ item.subtotal }} </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="invoice-total bg-light">Total: ${{ invoice.invoice_total }}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </article>
+    </section>
+
+{% endblock content%}

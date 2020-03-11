@@ -11,6 +11,7 @@ services:
   # Cloud application container.
   web:
     build: "."
+    user: "${UID}:${GID}"
     links:
       - "db:postgres"
     # Change the port if you'd like to expose your project locally on a

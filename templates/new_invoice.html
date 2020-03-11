@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+    <h1 class="text-center">Create New Invoice</h1>
+
+    <div class="row d-flex align-items-center">
+        <div id="new-invoice" class="col-md-6 offset-md-3">
+
+{#<pre> {% filter force_escape %} {% debug %} {% endfilter %} </pre>#}
+{#    <div class="row d-flex align-items-center">#}
+{#        <div class="col-md-6 offset-md-3">#}
+{#            <h1> Create a new Invoice</h1>#}
+{#           <form action="" method="POST">#}
+{#               {% csrf_token %}#}
+{##}
+{#                <div class="row">#}
+{#                    <div class="col-6">#}
+{#                        {{ form.title|as_crispy_field }}#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#               <div class="row">#}
+{#                    <div class="col-6">#}
+{#                        {{ form.client|as_crispy_field }}#}
+{#                    </div>#}
+{#                </div>#}
+{#               {{ form|crispy }}#}
+{##}
+{#{{ invoice_items.management_form }}#}
+{#                <h2>Invoice Items</h2>#}
+{#               {% for form in invoice_items %}#}
+{#           <div class="form-row">#}
+{#                <div class="form-group col-md-8">#}
+{#                    {{ form.item }}#}
+{#                </div>#}
+{#                <div class="form-group col-md-2">#}
+{#                    {{ form.quantity }}#}
+{#                </div>#}
+{#                <div class="form-group col-md-2">#}
+{#                    {{ form.rate }}#}
+{#                </div>#}
+{##}
+{#               {{ invoice_items|crispy }}#}
+{#               {% endfor %}#}
+{##}
+{#           </div>#}
+{#            {{ invoice_items|crispy }}#}
+{#           <button type="submit" class="btn btn-primary">Save Invoice</button>#}
+{#           </form>#}
+
+            <form action="" method="POST">
+                {% csrf_token %}
+            {{ invoice_items.management_form }}
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        {{ form.title|as_crispy_field }}
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        {{ form.client|as_crispy_field }}
+                    </div>
+
+                </div>
+            <h3>Invoice Items</h3>
+                {% for form in invoice_items %}
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                                {{ form.item|as_crispy_field }}
+                        </div>
+
+                        <div class="form-group col-md-2">
+                                {{ form.quantity|as_crispy_field }}
+                        </div>
+
+                        <div class="form-group col-md-2">
+                                {{ form.rate|as_crispy_field }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+{#                {{ form.as_p }}#}
+{#                <h2>Invoice Items</h2>#}
+{#                {{ invoice_items }}#}
+                <button class="btn btn-primary" type="submit">Save Invoice</button>
+            </form>
+{#        </div>#}
+{#    </div>#}
+</div>
+    </div>
+{% endblock content %}

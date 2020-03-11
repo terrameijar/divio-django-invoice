@@ -1,0 +1,203 @@
+1579178444780	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ASdLKSRyamjL"
+Gtk-Message: 14:40:44.897: Failed to load module "pantheon-filechooser-module"
+1579178446648	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1579178446752	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579178446753	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579178446753	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579178446753	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+Gtk-Message: 14:40:48.933: Failed to load module "pantheon-filechooser-module"
+[PIPELIGHT:LIN:unknown] attached to process.
+[PIPELIGHT:LIN:unknown] checking environment variable PIPELIGHT_SILVERLIGHT5_1_CONFIG.
+[PIPELIGHT:LIN:unknown] searching for config file pipelight-silverlight5.1.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/home/terra/.config/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/etc/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/usr/share/pipelight/configs/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] sandbox not found or not installed!
+[PIPELIGHT:LIN:silverlight5.1] using wine prefix directory /home/terra/.wine-pipelight.
+[PIPELIGHT:LIN:silverlight5.1] checking plugin installation - this might take some time.
+[install-dependency] wine-silverlight5.1-installer is already installed in '/home/terra/.wine-pipelight'.
+[install-dependency] wine-mpg2splt-installer is already installed in '/home/terra/.wine-pipelight'.
+fixme:winediag:start_process Wine Staging 1.9.7 is a testing version containing experimental patches.
+fixme:winediag:start_process Please mention your exact version when filing bug reports on winehq.org.
+wine: DLL not found.
+err:wineboot:ProcessRunKeys Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (1157)
+[PIPELIGHT:WIN:silverlight5.1] embedded mode         is on.
+[PIPELIGHT:WIN:silverlight5.1] windowless mode       is off.
+[PIPELIGHT:WIN:silverlight5.1] linux windowless mode is off.
+[PIPELIGHT:WIN:silverlight5.1] force SetWindow       is off.
+[PIPELIGHT:WIN:silverlight5.1] window class hook     is on.
+[PIPELIGHT:WIN:silverlight5.1] strict draw ordering  is off.
+wine: Unhandled page fault on read access to 0x00000004 at address 0x7e92da51 (thread 0022), starting debugger...
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExA.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExW.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenuEx.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenu.
+fixme:ntdll:EtwRegisterTraceGuidsW (0x7b8d2127, 0x7b970120, {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}, 1, 0x68f628, (null), (null), 0x7b970120): stub
+fixme:ntdll:EtwRegisterTraceGuidsW   register trace class {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}
+[PIPELIGHT:WIN:silverlight5.1] init successful!
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Vendor: Intel Open Source Technology Center
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Renderer: Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2
+[PIPELIGHT:WIN:silverlight5.1] Your GPU is in the whitelist, hardware acceleration should work.
+Gtk-Message: 14:41:06.337: Failed to load module "pantheon-filechooser-module"
+Gtk-Message: 14:41:09.096: Failed to load module "pantheon-filechooser-module"
+1579178469575	Marionette	INFO	Listening on port 40385
+1579178469780	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1579178471255	Marionette	INFO	Stopped listening on port 40385
+fixme:advapi:UnregisterTraceGuids deadbeef: stub
+1579178476295	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.YoxpXlUIQwhU"
+Gtk-Message: 14:41:16.363: Failed to load module "pantheon-filechooser-module"
+1579178477812	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1579178477938	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579178477938	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579178477939	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579178477940	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+Gtk-Message: 14:41:20.090: Failed to load module "pantheon-filechooser-module"
+[PIPELIGHT:LIN:unknown] attached to process.
+[PIPELIGHT:LIN:unknown] checking environment variable PIPELIGHT_SILVERLIGHT5_1_CONFIG.
+[PIPELIGHT:LIN:unknown] searching for config file pipelight-silverlight5.1.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/home/terra/.config/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/etc/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/usr/share/pipelight/configs/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] sandbox not found or not installed!
+[PIPELIGHT:LIN:silverlight5.1] using wine prefix directory /home/terra/.wine-pipelight.
+[PIPELIGHT:LIN:silverlight5.1] checking plugin installation - this might take some time.
+[install-dependency] wine-silverlight5.1-installer is already installed in '/home/terra/.wine-pipelight'.
+[install-dependency] wine-mpg2splt-installer is already installed in '/home/terra/.wine-pipelight'.
+fixme:winediag:start_process Wine Staging 1.9.7 is a testing version containing experimental patches.
+fixme:winediag:start_process Please mention your exact version when filing bug reports on winehq.org.
+wine: DLL not found.
+err:wineboot:ProcessRunKeys Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (1157)
+[PIPELIGHT:WIN:silverlight5.1] embedded mode         is on.
+[PIPELIGHT:WIN:silverlight5.1] windowless mode       is off.
+[PIPELIGHT:WIN:silverlight5.1] linux windowless mode is off.
+[PIPELIGHT:WIN:silverlight5.1] force SetWindow       is off.
+[PIPELIGHT:WIN:silverlight5.1] window class hook     is on.
+[PIPELIGHT:WIN:silverlight5.1] strict draw ordering  is off.
+wine: Unhandled page fault on read access to 0x00000004 at address 0x7e92da51 (thread 0022), starting debugger...
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExA.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExW.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenuEx.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenu.
+fixme:ntdll:EtwRegisterTraceGuidsW (0x7b8d2127, 0x7b970120, {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}, 1, 0x68f628, (null), (null), 0x7b970120): stub
+fixme:ntdll:EtwRegisterTraceGuidsW   register trace class {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}
+[PIPELIGHT:WIN:silverlight5.1] init successful!
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Vendor: Intel Open Source Technology Center
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Renderer: Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2
+[PIPELIGHT:WIN:silverlight5.1] Your GPU is in the whitelist, hardware acceleration should work.
+Gtk-Message: 14:41:23.886: Failed to load module "pantheon-filechooser-module"
+Gtk-Message: 14:41:26.045: Failed to load module "pantheon-filechooser-module"
+1579178487050	Marionette	INFO	Listening on port 42321
+1579178487272	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1579178488909	Marionette	INFO	Stopped listening on port 42321
+JavaScript error: resource:///modules/EveryWindow.jsm, line 37: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 5167: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to stat
+ExceptionHandler::GenerateDump cloned child 24439
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+fixme:advapi:UnregisterTraceGuids deadbeef: stub
+1579178650534	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ReZAgz9psVk4"
+Gtk-Message: 14:44:10.608: Failed to load module "pantheon-filechooser-module"
+1579178652065	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1579178652174	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579178652175	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579178652175	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579178652175	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+Gtk-Message: 14:44:14.274: Failed to load module "pantheon-filechooser-module"
+[PIPELIGHT:LIN:unknown] attached to process.
+[PIPELIGHT:LIN:unknown] checking environment variable PIPELIGHT_SILVERLIGHT5_1_CONFIG.
+[PIPELIGHT:LIN:unknown] searching for config file pipelight-silverlight5.1.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/home/terra/.config/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/etc/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/usr/share/pipelight/configs/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] sandbox not found or not installed!
+[PIPELIGHT:LIN:silverlight5.1] using wine prefix directory /home/terra/.wine-pipelight.
+[PIPELIGHT:LIN:silverlight5.1] checking plugin installation - this might take some time.
+[install-dependency] wine-silverlight5.1-installer is already installed in '/home/terra/.wine-pipelight'.
+[install-dependency] wine-mpg2splt-installer is already installed in '/home/terra/.wine-pipelight'.
+fixme:winediag:start_process Wine Staging 1.9.7 is a testing version containing experimental patches.
+fixme:winediag:start_process Please mention your exact version when filing bug reports on winehq.org.
+wine: DLL not found.
+err:wineboot:ProcessRunKeys Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (1157)
+[PIPELIGHT:WIN:silverlight5.1] embedded mode         is on.
+[PIPELIGHT:WIN:silverlight5.1] windowless mode       is off.
+[PIPELIGHT:WIN:silverlight5.1] linux windowless mode is off.
+[PIPELIGHT:WIN:silverlight5.1] force SetWindow       is off.
+[PIPELIGHT:WIN:silverlight5.1] window class hook     is on.
+[PIPELIGHT:WIN:silverlight5.1] strict draw ordering  is off.
+wine: Unhandled page fault on read access to 0x00000004 at address 0x7e92da51 (thread 0022), starting debugger...
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExA.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExW.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenuEx.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenu.
+fixme:ntdll:EtwRegisterTraceGuidsW (0x7b8d2127, 0x7b970120, {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}, 1, 0x68f628, (null), (null), 0x7b970120): stub
+fixme:ntdll:EtwRegisterTraceGuidsW   register trace class {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}
+[PIPELIGHT:WIN:silverlight5.1] init successful!
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Vendor: Intel Open Source Technology Center
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Renderer: Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2
+[PIPELIGHT:WIN:silverlight5.1] Your GPU is in the whitelist, hardware acceleration should work.
+Gtk-Message: 14:44:18.085: Failed to load module "pantheon-filechooser-module"
+Gtk-Message: 14:44:20.308: Failed to load module "pantheon-filechooser-module"
+1579178661278	Marionette	INFO	Listening on port 41447
+1579178661376	Marionette	WARN	TLS certificate errors will be ignored for this session
+1579178666637	Marionette	INFO	Stopped listening on port 41447
+JavaScript error: resource:///modules/EveryWindow.jsm, line 37: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 5167: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to stat
+ExceptionHandler::GenerateDump cloned child 24824
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+fixme:advapi:UnregisterTraceGuids deadbeef: stub
+1579178736431	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.lhWeFpCZUJTI"
+Gtk-Message: 14:45:36.494: Failed to load module "pantheon-filechooser-module"
+1579178738278	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1579178738382	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579178738382	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579178738383	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579178738383	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+Gtk-Message: 14:45:40.508: Failed to load module "pantheon-filechooser-module"
+[PIPELIGHT:LIN:unknown] attached to process.
+[PIPELIGHT:LIN:unknown] checking environment variable PIPELIGHT_SILVERLIGHT5_1_CONFIG.
+[PIPELIGHT:LIN:unknown] searching for config file pipelight-silverlight5.1.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/home/terra/.config/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/etc/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] trying to load config file from '/usr/share/pipelight/configs/pipelight-silverlight5.1'.
+[PIPELIGHT:LIN:unknown] sandbox not found or not installed!
+[PIPELIGHT:LIN:silverlight5.1] using wine prefix directory /home/terra/.wine-pipelight.
+[PIPELIGHT:LIN:silverlight5.1] checking plugin installation - this might take some time.
+[install-dependency] wine-silverlight5.1-installer is already installed in '/home/terra/.wine-pipelight'.
+[install-dependency] wine-mpg2splt-installer is already installed in '/home/terra/.wine-pipelight'.
+fixme:winediag:start_process Wine Staging 1.9.7 is a testing version containing experimental patches.
+fixme:winediag:start_process Please mention your exact version when filing bug reports on winehq.org.
+wine: DLL not found.
+err:wineboot:ProcessRunKeys Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (1157)
+[PIPELIGHT:WIN:silverlight5.1] embedded mode         is on.
+[PIPELIGHT:WIN:silverlight5.1] windowless mode       is off.
+[PIPELIGHT:WIN:silverlight5.1] linux windowless mode is off.
+[PIPELIGHT:WIN:silverlight5.1] force SetWindow       is off.
+[PIPELIGHT:WIN:silverlight5.1] window class hook     is on.
+[PIPELIGHT:WIN:silverlight5.1] strict draw ordering  is off.
+wine: Unhandled page fault on read access to 0x00000004 at address 0x7e93ba51 (thread 0022), starting debugger...
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExA.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function CreateWindowExW.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenuEx.
+[PIPELIGHT:WIN:silverlight5.1] replaced API function TrackPopupMenu.
+fixme:ntdll:EtwRegisterTraceGuidsW (0x7b8d2127, 0x7b970120, {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}, 1, 0x68f628, (null), (null), 0x7b970120): stub
+fixme:ntdll:EtwRegisterTraceGuidsW   register trace class {aa087e0e-0b35-4e28-8f3a-440c3f51eef1}
+[PIPELIGHT:WIN:silverlight5.1] init successful!
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Vendor: Intel Open Source Technology Center
+[PIPELIGHT:WIN:silverlight5.1] OpenGL Renderer: Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2
+[PIPELIGHT:WIN:silverlight5.1] Your GPU is in the whitelist, hardware acceleration should work.
+Gtk-Message: 14:45:44.289: Failed to load module "pantheon-filechooser-module"
+Gtk-Message: 14:45:46.669: Failed to load module "pantheon-filechooser-module"
+1579178747664	Marionette	INFO	Listening on port 46161
+1579178747711	Marionette	WARN	TLS certificate errors will be ignored for this session
+1579178752548	Marionette	INFO	Stopped listening on port 46161
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 5167: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to stat
+ExceptionHandler::GenerateDump cloned child 25085
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+fixme:advapi:UnregisterTraceGuids deadbeef: stub
