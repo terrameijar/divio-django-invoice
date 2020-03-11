@@ -45,8 +45,8 @@ COPY addons-dev /app/addons-dev/
 RUN pip-reqs compile && \
     pip-reqs resolve && \
     pip install \
-    --no-index --no-deps \
-    --requirement requirements.urls
+        --no-index --no-deps \
+        --requirement requirements.urls
 # </PYTHON>
 
 # <SOURCE>
