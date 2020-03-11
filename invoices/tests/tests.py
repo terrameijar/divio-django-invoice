@@ -166,29 +166,29 @@ class ClientTests(TestCase):
         )
 
     def test_client_object_content(self):
-        client = Client.objects.get(id=1)
-        expected_first_name = f'{client.first_name}'
-        expected_last_name = f'{client.last_name}'
+        client1 = self.client1
+        expected_first_name = f'{client1.first_name}'
+        expected_last_name = f'{client1.last_name}'
 
         self.assertEqual(expected_first_name, "Test")
         self.assertEqual(expected_last_name, "Client")
 
     def test_client_object_repr(self):
-        client1 = Client.objects.get(id=1)
+        client1 = self.client1
         self.assertEqual(repr(client1), "Client: Test Client")
 
     def test_client_str(self):
-        client1 = Client.objects.get(id=1)
+        client1 = self.client1
         self.assertEqual(str(client1), "Test Client")
 
     def test_client_created_by_returns_correct_user(self):
-        client1 = Client.objects.get(id=1)
+        client1 = self.client1
         created_by = f'{client1.created_by}'
         self.assertEqual(created_by, "testuser")
 
     def test_invoices_billed_to_client(self):
-        client1 = Client.objects.get(id=1)
-        client2 = Client.objects.get(id=2)
+        client1 = self.client1
+        client2 = self.client2
 
         invoices_billed_to_client1 = client1.invoice_set.all()
         invoices_billed_to_client2 = client2.invoice_set.all()
@@ -197,7 +197,8 @@ class ClientTests(TestCase):
         self.assertEqual(len(invoices_billed_to_client2), 0)
 
     def test_get_absolute_url(self):
-        pass
+        expected_url = f'/invoices/clients/{self.client1.id}/'
+        self.assertEqual(self.client1.get_absolute_url(), expected_url)
 
 
 
