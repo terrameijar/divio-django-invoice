@@ -9,7 +9,9 @@ class TestInvoicingApp(StaticLiveServerTestCase):
 
     def setUp(self):
         self.base_url = self.live_server_url
-        self.driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver') # Add chrome driver to sys PATH first
+        # Add chrome driver to sys PATH first
+        self.driver = webdriver.Chrome(
+            executable_path='/usr/local/bin/chromedriver')
 
     def test_landing_page_load(self):
         self.driver.get(self.base_url)
@@ -20,12 +22,5 @@ class TestInvoicingApp(StaticLiveServerTestCase):
         invoices_link = self.driver.find_element_by_id("invoices-dropdown")
         invoices_link.click()
 
-
-
-
     def tearDown(self):
         self.driver.quit()
-
-
-
-
