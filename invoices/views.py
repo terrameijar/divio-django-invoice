@@ -199,6 +199,16 @@ class ClientUpdateView(LoginRequiredMixin, UpdateView):
         'address1', 'address2', 'country', 'phone_number',
     ]
 
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return Client.objects.filter(created_by=self.request.user)
+        else:
+            return Client.objects.none()
+
+
+class ClientDeleteView(LoginRequiredMixin, DeleteView):
+    template_name = 'confirm_delete_client.html'
+    success_url = reverse_lazy('client-list')
 
     def get_queryset(self):
         if self.request.user.is_authenticated:

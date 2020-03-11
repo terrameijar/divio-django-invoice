@@ -53,38 +53,38 @@ class InvoiceTests(TestCase):
         self.invoice.save()
 
     def test_invoice_title(self):
-        invoice = Invoice.objects.get(id=1)
+        invoice = Invoice.objects.get(id=self.invoice.id)
         expected_invoice_title = f'{invoice.title}'
         self.assertEqual(expected_invoice_title, "Test Invoice 1")
 
     def test_invoice_total(self):
-        invoice= Invoice.objects.get(id=1)
+        invoice= Invoice.objects.get(id=self.invoice.id)
         expected_invoice_total = invoice.get_invoice_total()
         self.assertEqual(expected_invoice_total, 80)
 
     def test_invoice_str_method(self):
-        invoice = Invoice.objects.get(id=1)
+        invoice = Invoice.objects.get(id=self.invoice.id)
         expected_invoice_str = f'{invoice.title} - {invoice.invoice_total}'
         self.assertEqual(expected_invoice_str, "Test Invoice 1 - 80.00")
 
     def test_invoice_repr_method(self):
-        invoice = Invoice.objects.get(id=1)
+        invoice = Invoice.objects.get(id=self.invoice.id)
         expected_invoice_repr = repr(invoice)
         self.assertEqual(expected_invoice_repr,
                          "<Invoice: Test Client - Test Invoice 1>")
 
     def test_invoice_create_date(self):
-        invoice = Invoice.objects.get(id=1)
+        invoice = Invoice.objects.get(id=self.invoice.id)
         expected_create_date = invoice.create_date
         self.assertEqual(expected_create_date, datetime.date(2019,1,1))
 
     def test_invoice_client(self):
-        invoice = Invoice.objects.get(id=1)
+        invoice = Invoice.objects.get(id=self.invoice.id)
         expected_client = str(invoice.client)
         self.assertEqual(expected_client, "Test Client")
 
     def test_invoice_contains_client_address(self):
-        invoice = Invoice.objects.get(id=1)
+        invoice = Invoice.objects.get(id=self.invoice.id)
         client_address1 = invoice.client.address1
         client_address2 = invoice.client.address2
         self.assertEqual(client_address1,"1234 Paradise Lane")
@@ -248,17 +248,17 @@ class ViewsLoggedInTests(TestCase):
         self.assertTemplateUsed(response, 'new_invoice.html')
 
     def test_invoice_detail_view(self):
-        response = self.client.get(reverse('invoice-detail', args=[1]))
+        response = self.client.get(reverse('invoice-detail', args=[self.invoice.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'invoice_detail.html')
 
     def test_invoice_update_view(self):
-        response = self.client.get(reverse('invoice-edit', args=[1]))
+        response = self.client.get(reverse('invoice-edit', args=[self.invoice.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'edit_invoice.html')
 
     def test_invoice_delete_view(self):
-        response = self.client.get(reverse('invoice-delete', args=[1]))
+        response = self.client.get(reverse('invoice-delete', args=[self.invoice.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'confirm_delete_invoice.html')
 
@@ -273,19 +273,19 @@ class ViewsLoggedInTests(TestCase):
         self.assertTemplateUsed(response, 'clients.html')
 
     def test_client_update_view(self):
-        response = self.client.get(reverse('client-edit', args=[1]))
+        response = self.client.get(reverse('client-edit', args=[self.client1.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'edit_client.html')
 
     def test_client_detail_view(self):
-        response = self.client.get(reverse('client-detail', args=[1]))
+        response = self.client.get(reverse('client-detail', args=[self.client1.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'client_detail.html')
 
     def test_client_delete_view(self):
-        response = self.client.get(reverse('client-delete', args=[1]))
+        response = self.client.get(reverse('client-delete', args=[self.client1.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'client_delete.html')
+        self.assertTemplateUsed(response, 'confirm_delete_client.html')
 
 
 class ViewsLoggedOutTests(TestCase):
