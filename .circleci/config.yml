@@ -115,14 +115,13 @@ jobs:
         environment: # environment variables for the Postgres container.
           POSTGRES_HOST_AUTH_METHOD: "trust"
           POSTGRES_DB: "db"
-        steps:
-          - checkout
-          - run:
-              name: Install Dependencies and login
-              command: |
-                pip install divio-cli aldryn-client
-          - run:
-              name: Login to Divio
-              command: |
-                divio login
-
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies and login
+          command: |
+            pip install divio-cli aldryn-client
+      - run:
+          name: Login to Divio
+          command: |
+            divio login
