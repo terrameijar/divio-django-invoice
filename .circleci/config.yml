@@ -120,5 +120,5 @@ jobs:
       - run:
           name: Build project
           command: |
-            docker compose build
+            docker-compose build
 
