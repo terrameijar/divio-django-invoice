@@ -118,16 +118,10 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
+          docker_layer_caching: true
+
       - run:
           name: Build project
           command: |
-            pwd
-      - run:
-          name: Build project
-          command: |
-            ls
-      - run:
-          name: Build project
-          command: |
-            docker images
+            docker-compose up
 
