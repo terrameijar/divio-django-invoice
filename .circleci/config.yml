@@ -118,10 +118,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Dependencies and login
+          name: Build project
           command: |
-            pip install divio-cli aldryn-client
-      - run:
-          name: Login to Divio
-          command: |
-            divio login
+            docker compose build
+
