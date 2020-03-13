@@ -118,9 +118,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Start docker
-        command: |
-          dockerd
+          name: Start docker
+          command: |
+            dockerd
       - run:
           name: Build project
           command: |
