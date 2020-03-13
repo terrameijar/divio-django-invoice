@@ -126,8 +126,8 @@ jobs:
           name: Build project
           command: |
             ls
-#      # - run:
-#      #     name: Build project
-#      #     command: |
-#      #       docker-compose run web python manage.py test invoices.tests.tests
+     - run:
+         name: Build project
+         command: |
+           docker-compose run web python manage.py test
 
