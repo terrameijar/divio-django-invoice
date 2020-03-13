@@ -128,7 +128,7 @@ jobs:
             ls
       - run:
           name: Build project
-           command: |
+          command: |
             docker-compose run -d --name web web
             docker-compose run web python manage.py test
 
