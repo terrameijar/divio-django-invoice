@@ -14,11 +14,19 @@ jobs:
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/postgres:9.6-alpine
+<<<<<<< HEAD
 
     environment:
         POSTGRES_DB: "db"
         POSTGRES_HOST_AUTH_METHOD: "trust"
 
+=======
+      environment:
+        POSTGRES_DB: "db"
+        POSTGRES_HOST_AUTH_METHOD: "trust"
+      volumes:
+        - ".:/app:rw"
+>>>>>>> 5ff4195603f14096ee852221d3ab6baf6b0ce695
 
     working_directory: ~/django-invoices
 
