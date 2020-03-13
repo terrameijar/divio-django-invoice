@@ -121,5 +121,13 @@ jobs:
       - run:
           name: Build project
           command: |
-            docker-compose run web python manage.py test invoices.tests.tests
+            pwd
+      - run:
+          name: Build project
+          command: |
+            ls
+#      # - run:
+#      #     name: Build project
+#      #     command: |
+#      #       docker-compose run web python manage.py test invoices.tests.tests
 
