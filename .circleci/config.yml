@@ -130,5 +130,5 @@ jobs:
           name: Build project
           command: |
             docker run -d --name divio web
-            docker exec divio web python manage.py test
+            docker-compose exec divio web python manage.py test
 
