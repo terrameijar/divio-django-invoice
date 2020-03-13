@@ -117,9 +117,7 @@ jobs:
           POSTGRES_DB: "db"
     steps:
       - checkout
-      - setup_remote_docker: # https://circleci.com/docs/2.0/building-docker-images/
-          docker_layer_caching: true
-
+      - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
       - run:
           name: Build project
           command: |
