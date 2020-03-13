@@ -121,5 +121,5 @@ jobs:
       - run:
           name: Build project
           command: |
-            docker-compose build
+            docker-compose run web python manage.py test invoices.tests.tests
 
