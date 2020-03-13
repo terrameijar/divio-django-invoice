@@ -118,6 +118,10 @@ jobs:
     steps:
       - checkout
       - run:
+        name: Start docker
+        command: |
+          dockerd
+      - run:
           name: Build project
           command: |
             docker-compose build
