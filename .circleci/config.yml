@@ -163,6 +163,7 @@ jobs:
         environment: # environment variables for the Postgres container.
           POSTGRES_HOST_AUTH_METHOD: "trust"
           POSTGRES_DB: "db"
+          DATABASE_URL: "postgres://postgres@postgres:5432/db"
     steps:
       - checkout
       - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
