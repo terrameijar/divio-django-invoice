@@ -122,5 +122,5 @@ jobs:
           name: Build project
           command: |
             docker-compose build
-            docker-compose run web python manage.py test
+            docker-compose exec web ls
 
