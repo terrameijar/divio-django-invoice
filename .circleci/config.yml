@@ -122,5 +122,5 @@ jobs:
           name: Build project
           command: |
             docker-compose build
-            docker-compose exec web ls
+            docker-compose exec ls
 
