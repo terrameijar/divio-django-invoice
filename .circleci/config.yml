@@ -140,6 +140,9 @@ jobs:
           name: Build project
           command: |
             docker-compose build
+      - run:
+          name: Run tests
+          command: |
             docker-compose run web python manage.py test
           # docker-compose run -d --name my-app my-app
           # docker exec my-app command
