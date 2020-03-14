@@ -26,7 +26,7 @@ services:
     # the project locally in Live configuration, you will need to change this.
     # See https://docs.divio.com/en/latest/how-to/local-in-live-mode.html.
     # command: python manage.py runserver 0.0.0.0:80
-    command: /bin/bash -c "sleep 7; python3 manage.py runserver -h 0.0.0.0:80 -r -d"
+    command: /bin/bash -c "sleep 30; python3 manage.py runserver -h 0.0.0.0:80 -r -d"
     # Add any environment variables your project needs to the .env-local file.
     # See https://docs.divio.com/en/latest/reference/configuration-environment-variables.html.
     env_file: .env-local
