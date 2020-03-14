@@ -128,22 +128,48 @@
 
 # Fourth Iteration
 
+# version: 2
+# jobs:
+#   build:
+#     machine: true
+#     working_directory: ~/django-invoices
+#     steps:
+#       - checkout
+#       # - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
+#       - run:
+#           name: Build project
+#           command: |
+#             docker-compose build
+#       - run:
+#           name: Run tests
+#           command: |
+#             docker-compose run web ls
+#             docker-compose run web python manage.py test
+          # docker-compose run -d --name my-app my-app
+#           # docker exec my-app command
+#           Normally Django will use a connection to the 'postgres' database to avoid running initialization queries against the production database when it's not needed (for example, when running tests). Django was unable to create a connection to the 'postgres' database and will use the first PostgreSQL database instead.
+#   RuntimeWarning
+# Traceback (most recent call last):
+
+# Fifth version
+
 version: 2
 jobs:
   build:
-    machine: true
     working_directory: ~/django-invoices
+    docker:
+      - image: circleci/python:3.6.8-browsers
+      - image: circleci/postgres:9.6.2
+        environment: # environment variables for the Postgres container.
+          POSTGRES_HOST_AUTH_METHOD: "trust"
+          POSTGRES_DB: "db"
     steps:
       - checkout
-      # - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
+      - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
       - run:
           name: Build project
           command: |
             docker-compose build
-      - run:
-          name: Run tests
-          command: |
-            docker-compose run web ls
-            docker-compose run web python manage.py test
-          # docker-compose run -d --name my-app my-app
-          # docker exec my-app command
+            docker images
+            docker run -d --name djangoinvoices djangoinvoices
+            docker exec djangoinvoices python manage.py test
