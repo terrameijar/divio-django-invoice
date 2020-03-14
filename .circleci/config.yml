@@ -122,7 +122,7 @@ jobs:
           name: Build project
           command: |
             docker-compose build
-            docker-compose exec django-invoices_web ls
+            docker-compose exec django-invoices_web:latest ls
           # docker-compose run -d --name my-app my-app
           # docker exec my-app command
 
