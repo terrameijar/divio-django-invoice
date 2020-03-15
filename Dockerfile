@@ -11,6 +11,12 @@ FROM divio/base:4.15-py3.6-slim-stretch
 # Add latest version of cairo to sources
 RUN echo "deb http://ftp.us.debian.org/debian buster main" >> /etc/apt/sources.list.d/cairo.list
 
+# Download and Install GeckoDriver
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+RUN tar -xvzf geckodriver*
+RUN chmod +x geckodriver
+RUN mv geckodriver /usr/local/bin/
+
 # Install Chrome
 # RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
