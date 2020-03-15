@@ -12,7 +12,7 @@ FROM divio/base:4.15-py3.6-slim-stretch
 RUN echo "deb http://ftp.us.debian.org/debian buster main" >> /etc/apt/sources.list.d/cairo.list
 
 # Setup Chrome PPA
-# RUN apt-get update
+RUN apt-get update
 RUN apt-get install -y gnupg
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
