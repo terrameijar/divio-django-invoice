@@ -170,7 +170,7 @@ jobs:
       - run:
           name: Build project
           command: |
-            docker-compose build
+            ls
             # docker-compose run web python manage.py test
             # docker images
             # docker run django-invoices_web
