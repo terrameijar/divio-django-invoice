@@ -198,14 +198,14 @@ jobs:
       - checkout
 
       - run:
-          name: Build project
+          name: Spin up project
           command: |
             docker-compose up
 
-      # - run:
-      #     name: Run tests
-      #     command: |
-      #       docker-compose run web python manage.py test
+      - run:
+          name: Run tests
+          command: |
+            docker-compose run web python manage.py test
 
 workflows:
   version: 2
