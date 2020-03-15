@@ -200,7 +200,12 @@ jobs:
       - run:
           name: Build project
           command: |
-            docker-compose build
+            docker-compose up
+
+      # - run:
+      #     name: Run tests
+      #     command: |
+      #       docker-compose run web python manage.py test
 
 workflows:
   version: 2
