@@ -164,6 +164,7 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: "trust"
           POSTGRES_DB: "db"
           DATABASE_URL: "postgres://postgres@postgres:5432/db"
+          DEBUG: True
     steps:
       - checkout
       # - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
@@ -189,3 +190,14 @@ jobs:
           command: |
             . venv/bin/activate
             python manage.py test
+
+  test-django-invoices:
+    machine: true
+
+    steps:
+      - checkout
+
+      - run:
+          name: Build project
+          command: |
+            docker-compose build
