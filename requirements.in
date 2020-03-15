@@ -8,16 +8,17 @@ asgiref==3.2.3
 astroid==2.3.3
 autopep8==1.4.4
 Babel==2.8.0
+black==19.10b0
 cairocffi==1.1.0
 CairoSVG==2.4.2
 cffi==1.13.2
 coverage==5.0.3
 cssselect2==0.2.2
 defusedxml==0.6.0
-# Django==3.0.2
 django-crispy-forms==1.8.1
 django-phonenumber-field==4.0.0
 django-weasyprint==0.5.5
+flake8==3.7.9
 freezegun==0.3.14
 gunicorn==20.0.4
 html5lib==1.0.1

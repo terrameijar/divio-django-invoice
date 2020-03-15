@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 lint:
 	@printf '\xf0\x9f\x94\x8d  \e[1;32mChecking code quality and style\e[0m\n'
-	flake8 --ignore ./addons/ addons-dev/ */migrations/ .
+	flake8 .
 	black --check .
 
 format:
