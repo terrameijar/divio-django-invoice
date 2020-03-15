@@ -170,7 +170,9 @@ jobs:
       - run:
           name: Build project
           command: |
-            ls
+            python3.6 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.in
             # docker-compose run web python manage.py test
             # docker images
             # docker run django-invoices_web
