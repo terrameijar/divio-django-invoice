@@ -6,6 +6,7 @@
 
 # <DOCKER_FROM>
 FROM divio/base:4.15-py3.6-slim-stretch
+# FROM circleci/python:3.6.8-browsers
 # </DOCKER_FROM>
 
 # Add latest version of cairo to sources
