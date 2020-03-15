@@ -14,3 +14,4 @@ test:
 
 run:
 	@printf '\xf0\x9f\x94\x8d  \e[1;32mStarting Django Invoice\e[0m\n'
+	docker-compose up
