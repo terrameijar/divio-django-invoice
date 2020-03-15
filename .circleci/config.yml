@@ -192,10 +192,6 @@ jobs:
             python manage.py test
             # RuntimeWarning: no database configured. Falling back to DATABASE_URL=sqlite:////home/circleci/django-invoices/data/db.sqlite3
 
-      - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-
   test-django-invoices:
     working_directory: ~/django-invoices
     machine: true
@@ -212,7 +208,6 @@ jobs:
           name: Run tests
           command: |
             docker-compose run web python manage.py test
-            # Can't connect to server, connection refused is server running on host "postgres"
 
 workflows:
   version: 2

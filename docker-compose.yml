@@ -20,18 +20,15 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - "./wait-for-it.sh:/wait-for-it.sh"
       - ".:/app:rw"
       - "./data:/data:rw"
     # The default command that the container starts with. If you'd like to run
     # the project locally in Live configuration, you will need to change this.
     # See https://docs.divio.com/en/latest/how-to/local-in-live-mode.html.
-    command: /wait-for-it.sh db:5432 -- python manage.py runserver 0.0.0.0:80
+    command: python manage.py runserver 0.0.0.0:80
     # Add any environment variables your project needs to the .env-local file.
     # See https://docs.divio.com/en/latest/reference/configuration-environment-variables.html.
     env_file: .env-local
-    depends_on:
-      - db
 
   # On the Cloud, your database runs on a dedicated cluster. Locally, we
   # replicate it in a Docker container called "db".
