@@ -1,0 +1,15 @@
+[flake8]
+ignore = D203
+exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist,
+    venv,
+    .env,
+    migrations,
+    addons,
+    addons-dev
+max-complexity = 10
