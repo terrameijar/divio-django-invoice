@@ -10,7 +10,7 @@ FROM circleci/python:3.6.8-browsers
 # </DOCKER_FROM>
 
 # Add latest version of cairo to sources
-RUN echo "deb http://ftp.us.debian.org/debian buster main" >> /etc/apt/sources.list.d/cairo.list
+RUN sudo echo "deb http://ftp.us.debian.org/debian buster main" >> /etc/apt/sources.list.d/cairo.list
 
 # Install Chrome
 # RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -23,9 +23,9 @@ RUN echo "deb http://ftp.us.debian.org/debian buster main" >> /etc/apt/sources.l
 # RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 
 # Update package list and install chrome, weasyprint and other necessary packages
-RUN apt-get update
+RUN sudo apt-get update
 # RUN apt-get install -y wget xvfb unzip google-chrome-stable build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2-dev libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
-RUN apt-get install -y wget xvfb unzip build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2-dev libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
+RUN sudo apt-get install -y wget xvfb unzip build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2-dev libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
 # Setup Chromedriver environment variables
 # ENV CHROMEDRIVER_VERSION 80.0.3987.106
 # ENV CHROMEDRIVER_DIR /Chromedriver
