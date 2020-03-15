@@ -211,7 +211,8 @@ jobs:
             # Can't connect to server, connection refused is server running on host "postgres"
 
       - store_artifacts:
-          path: test-reports
+          path: test-results.xml
+          prefix: tests
           destination: test-reports
 
 workflows:
