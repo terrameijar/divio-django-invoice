@@ -189,8 +189,7 @@ jobs:
           name: Run tests
           command: |
             . venv/bin/activate
-            # python manage.py test
-            ls
+            python manage.py test
 
   test-django-invoices:
     machine: true
@@ -202,3 +201,10 @@ jobs:
           name: Build project
           command: |
             docker-compose build
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test-django-invoices
