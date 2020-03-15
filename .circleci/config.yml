@@ -172,7 +172,7 @@ jobs:
           command: |
             docker-compose build
             # docker-compose run web python manage.py test
-            # docker-compose run web ls /app/
             docker images
+            docker exec django-invoices_web ls /app/
             # docker run --publish 8000:8080 -d --name djangoinvoices django-invoices_web
             # docker exec djangoinvoices python manage.py test
