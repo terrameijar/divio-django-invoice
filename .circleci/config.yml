@@ -208,6 +208,8 @@ jobs:
           command: |
             docker-compose run web python manage.py test
             # Can't connect to server, connection refused is server running on host "postgres"
+      - store_test_results:
+          path: test-results
 
 workflows:
   version: 2
