@@ -19,8 +19,9 @@ class TestInvoicingApp(StaticLiveServerTestCase):
         # # Add chrome driver to sys PATH first
         # self.driver = webdriver.Chrome(chrome_options=chrome_options)
         options = Options()
-        options.headless = True
-        self.driver = webdriver.Firefox(options)
+        # options.headless = True
+        options.add_argument('-headless')
+        self.driver = webdriver.Firefox(firefox_options=options)
 
     def test_landing_page_load(self):
         self.driver.get(self.base_url)
