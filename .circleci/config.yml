@@ -195,7 +195,6 @@ jobs:
       - store_artifacts:
           path: test-results.xml
           prefix: tests
-          destination: test-reports
 
   test-django-invoices:
     working_directory: ~/django-invoices
