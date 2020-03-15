@@ -11,37 +11,25 @@ FROM divio/base:4.15-py3.6-slim-stretch
 # Add latest version of cairo to sources
 RUN echo "deb http://ftp.us.debian.org/debian buster main" >> /etc/apt/sources.list.d/cairo.list
 
-# Download and Install GeckoDriver
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-RUN tar -xvzf geckodriver*
-RUN chmod +x geckodriver
-RUN mv geckodriver /usr/local/bin/
+# Download & Install Chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 
-# Install Chrome
-# RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-# RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
-
-# Setup Chrome PPA
-# RUN apt-get update
-# RUN apt-get install -y gnupg
-# RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-# RUN echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-
-# Update package list and install chrome, weasyprint and other necessary packages
+# Update package list and install weasyprint and other necessary packages
 RUN apt-get update
-# RUN apt-get install -y wget xvfb unzip google-chrome-stable build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2-dev libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
 RUN apt-get install -y wget xvfb unzip build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2-dev libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
+
 # Setup Chromedriver environment variables
-# ENV CHROMEDRIVER_VERSION 80.0.3987.106
-# ENV CHROMEDRIVER_DIR /Chromedriver
+ENV CHROMEDRIVER_VERSION 80.0.3987.106
+ENV CHROMEDRIVER_DIR /Chromedriver
 
 # Download and install Chromedriver
-# RUN mkdir $CHROMEDRIVER_DIR
-# RUN wget -q --continue -P $CHROMEDRIVER_DIR "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-# RUN unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
+RUN mkdir $CHROMEDRIVER_DIR
+RUN wget -q --continue -P $CHROMEDRIVER_DIR "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+RUN unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
 
 # Add ChromeDriver to the PATH
-# ENV PATH $CHROMEDRIVER_DIR:$PATH
+ENV PATH $CHROMEDRIVER_DIR:$PATH
 
 # <NPM>
 # </NPM>
