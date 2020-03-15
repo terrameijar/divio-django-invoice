@@ -198,10 +198,10 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Spin up project
-          command: |
-            docker-compose build
+      # - run:
+      #     name: Spin up project
+      #     command: |
+      #       docker-compose build
 
       - run:
           name: Run tests
