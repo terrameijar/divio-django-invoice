@@ -31,7 +31,7 @@ INSTALLED_ADDONS = [
 # Note that any settings you provide before the next two lines are liable to be
 # overwritten, so they should be placed *after* this section.
 
-import aldryn_addons.settings
+import aldryn_addons.settings  # noqa E402
 aldryn_addons.settings.load(locals())
 
 # Your own Django settings can be applied from here on. Key settings like
@@ -49,7 +49,7 @@ INSTALLED_APPS.extend([
 
     # Third party
     'crispy_forms',
-])
+])  # noqa F821
 
 AUTH_USER_MODEL = 'users.CustomUser'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
