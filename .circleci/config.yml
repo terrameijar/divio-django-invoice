@@ -168,7 +168,7 @@ jobs:
       - checkout
       # - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
       - run:
-          name: Build project
+          name: Install Python dependencies
           command: |
             python3.6 -m venv venv
             . venv/bin/activate
@@ -179,3 +179,7 @@ jobs:
             # docker exec django-invoices_web ls /app/
             # docker run --publish 8000:8080 -d --name djangoinvoices django-invoices_web
             # docker exec djangoinvoices python manage.py test
+      -save_cache:
+        paths:
+          - ./venv
+        key: v1-dependencies-{{checksum "requirements.in"}}
