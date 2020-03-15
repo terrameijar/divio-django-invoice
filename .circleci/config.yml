@@ -158,7 +158,7 @@ jobs:
   build:
     working_directory: ~/django-invoices
     docker:
-      - image: circleci/python:3.6.8-browsers
+      - image: divio/base:4.15-py3.6-slim-stretch
       - image: circleci/postgres:9.6.2
         environment: # environment variables for the Postgres container.
           POSTGRES_HOST_AUTH_METHOD: "trust"
@@ -166,14 +166,14 @@ jobs:
           DATABASE_URL: "postgres://postgres@postgres:5432/db"
     steps:
       - checkout
-      - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
+      # - setup_remote_docker # https://circleci.com/docs/2.0/building-docker-images/
       - run:
           name: Build project
           command: |
             docker-compose build
             # docker-compose run web python manage.py test
-            docker images
-            docker run django-invoices_web
-            docker exec django-invoices_web ls /app/
+            # docker images
+            # docker run django-invoices_web
+            # docker exec django-invoices_web ls /app/
             # docker run --publish 8000:8080 -d --name djangoinvoices django-invoices_web
             # docker exec djangoinvoices python manage.py test
