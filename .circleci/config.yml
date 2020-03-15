@@ -172,6 +172,6 @@ jobs:
           command: |
             docker-compose up -d
             # docker-compose run web python manage.py test
-            docker-compose run web ls
+            docker-compose run web ls data
             # docker run --publish 8000:8080 -d --name djangoinvoices django-invoices_web
             # docker exec djangoinvoices python manage.py test
