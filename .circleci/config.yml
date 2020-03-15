@@ -170,7 +170,7 @@ jobs:
       - run:
           name: Build project
           command: |
-            docker-compose up -d
+            docker-compose build
             # docker-compose run web python manage.py test
             docker-compose run web ls /app/data
             # docker run --publish 8000:8080 -d --name djangoinvoices django-invoices_web
