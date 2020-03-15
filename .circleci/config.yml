@@ -200,7 +200,7 @@ jobs:
       - run:
           name: Spin up project
           command: |
-            docker-compose up
+            docker-compose build
 
       - run:
           name: Run tests
