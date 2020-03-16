@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 from django.urls import path, include
-from django.contrib import admin
 from aldryn_django.utils import i18n_patterns
 import aldryn_addons.urls
 
 
 urlpatterns = [
     # add your own patterns here
-    # path('admin/', admin.site.urls),
     path('invoices/', include('invoices.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('users.urls')),

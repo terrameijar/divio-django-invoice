@@ -1,5 +1,3 @@
-from django.test import LiveServerTestCase
-import time
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 import unittest
 
@@ -8,7 +6,6 @@ from selenium.webdriver.chrome.options import Options
 
 
 class TestInvoicingApp(StaticLiveServerTestCase):
-
     def setUp(self):
         self.base_url = self.live_server_url
         chrome_options = Options()

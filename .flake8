@@ -1,5 +1,7 @@
 [flake8]
-ignore = D203
+max-line-length = 88
+extend-ignore = E203
+ignore = D203, F722
 exclude =
     .git,
     __pycache__,
@@ -11,5 +13,6 @@ exclude =
     .env,
     migrations,
     addons,
-    addons-dev
+    addons-dev,
+    settings.py,
 max-complexity = 10
