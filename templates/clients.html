@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>My Clients</h2>
-            TODO: Make this bootstrap cards
-            TODO: Add Create client link if client list is empty
-            TODO: Client Detail page should show invoices billed to client
+    <h2 class="text-center">My Clients</h2>
+    <a href="{% url "new-client" %}" class="btn btn-success">New Client</a>
+            {% comment %} TODO: Make this bootstrap cards {% endcomment %}
+            {% comment %} TODO: Client Detail page should show invoices billed to client {% endcomment %}
 
 
 
