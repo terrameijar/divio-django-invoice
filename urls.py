@@ -6,9 +6,9 @@ import aldryn_addons.urls
 
 urlpatterns = [
     # add your own patterns here
-    path('invoices/', include('invoices.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('users.urls')),
+    path("", include("invoices.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("users.urls")),
 
     # url(r'^account/', include('account.urls')),
 ] + aldryn_addons.urls.patterns() + i18n_patterns(

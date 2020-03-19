@@ -21,3 +21,9 @@ Thumbs.db
 /static_collected
 /node_modules
 # </DEFAULT>
+
+# Editors
+settings.json
+
+# Misc
+geckodriver.log
