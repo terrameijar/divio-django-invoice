@@ -219,6 +219,7 @@ class ViewsLoggedInTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Invoicing App")
         self.assertTemplateUsed(response, "dashboard.html")
+        self.assertNotIn("You have not created any invoices yet.", response)
 
     def test_invoice_create_view(self):
         response = self.client.get(reverse("new-invoice"))
@@ -249,6 +250,7 @@ class ViewsLoggedInTests(TestCase):
         response = self.client.get(reverse("client-list"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "clients.html")
+        self.assertNotIn("You have not created any clients yet.", response)
 
     def test_client_update_view(self):
         response = self.client.get(reverse("client-edit", args=[self.client1.id]))
@@ -326,6 +328,10 @@ class ViewsLoggedInNewUserTests(TestCase):
     def test_empty_client_list_view(self):
         response = self.client.get(reverse("client-list"))
         self.assertContains(response, "You have not created any clients yet")
+
+    def test_empty_invoice_list_view(self):
+        response = self.client.get(reverse("invoice-list"))
+        self.assertContains(response, "You have not created any invoices yet.")
 
 
 # TODO: Add form tests
