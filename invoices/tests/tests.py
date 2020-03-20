@@ -177,7 +177,7 @@ class ClientTests(TestCase):
         self.assertEqual(len(invoices_billed_to_client2), 0)
 
     def test_get_absolute_url(self):
-        expected_url = f"/invoices/clients/{self.client1.id}/"
+        expected_url = f"/clients/{self.client1.id}/"
         self.assertEqual(self.client1.get_absolute_url(), expected_url)
 
 

@@ -45,7 +45,7 @@ aldryn_addons.settings.load(locals())
 INSTALLED_APPS.extend([
     # Extend the INSTALLED_APPS setting by listing additional applications here
     'invoices',
-    'users.apps.UsersConfig',
+    'users',
 
     # Third party
     'crispy_forms',
