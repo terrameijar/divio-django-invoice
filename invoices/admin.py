@@ -22,7 +22,6 @@ class InvoiceAdmin(admin.ModelAdmin):
         InvoiceItemsInline,
     ]
     readonly_fields = ("invoice_total",)
-    # TODO: Add a custom save method to save invoice totals
 
 
 admin.site.register(Invoice, InvoiceAdmin)

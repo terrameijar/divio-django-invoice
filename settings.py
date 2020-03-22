@@ -1,3 +1,5 @@
+import os
+
 # This is a fairly standard Django settings file, with some special additions
 # that allow addon applications to auto-configure themselves. If it looks
 # unfamiliar, please see our documentation:
@@ -14,11 +16,10 @@
 INSTALLED_ADDONS = [
     # Important: Items listed inside the next block are auto-generated.
     # Manual changes will be overwritten.
-
     # <INSTALLED_ADDONS>  # Warning: text inside the INSTALLED_ADDONS tags is auto-generated. Manual changes will be overwritten.
-    'aldryn-addons',
-    'aldryn-django',
-    'aldryn-sso',
+    "aldryn-addons",
+    "aldryn-django",
+    "aldryn-sso",
     # </INSTALLED_ADDONS>
 ]
 
@@ -32,6 +33,7 @@ INSTALLED_ADDONS = [
 # overwritten, so they should be placed *after* this section.
 
 import aldryn_addons.settings  # noqa E402
+
 aldryn_addons.settings.load(locals())
 
 # Your own Django settings can be applied from here on. Key settings like
@@ -42,17 +44,19 @@ aldryn_addons.settings.load(locals())
 #
 # for guidance on managing these settings.
 
-INSTALLED_APPS.extend([
-    # Extend the INSTALLED_APPS setting by listing additional applications here
-    'invoices',
-    'users',
+INSTALLED_APPS.extend(
+    [
+        # Extend the INSTALLED_APPS setting by listing additional applications here
+        "invoices",
+        "users",
+        # Third party
+        "crispy_forms",
+    ]
+)  # noqa F821
 
-    # Third party
-    'crispy_forms',
-])  # noqa F821
-
-AUTH_USER_MODEL = 'users.CustomUser'
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+AUTH_USER_MODEL = "users.CustomUser"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+# MEDIA_URL = 'media/'
 
 # To see the settings that have been applied, use the Django diffsettings
 # management command.
