@@ -123,7 +123,7 @@ class InvoiceCreateView(LoginRequiredMixin, CreateView):
 
 
 class InvoiceUpdateView(LoginRequiredMixin, UpdateView):
-    fields = ["title"]
+    fields = ["title","client", "invoice_terms"]
     template_name = "edit_invoice.html"
 
     def get_queryset(self):
@@ -253,7 +253,9 @@ def generate_pdf_invoice(request, invoice_id):
         "client": client,
         "user": user,
         "invoice_items": invoice_items,
+        "host": request.get_host(),
     }
+    print(request.get_host())
 
     html_template = render_to_string("pdf/html-invoice.html", context)
 

@@ -37,12 +37,15 @@ class Invoice(models.Model):
     title = models.CharField(max_length=200)
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    # description = models.TextField()
     invoice_total = models.DecimalField(
         max_digits=6, decimal_places=2, blank=True, editable=False
     )
     create_date = models.DateField(auto_now_add=True)
-
+    invoice_terms = models.TextField(
+        blank=True,
+        default="NET 30 Days. Finance Charge of 1.5% will be \
+            made on unpaid balances after 30 days."
+    )
     class Meta:
         verbose_name: "Invoice"
         verbose_name_plural: "Invoices"  # noqa F821
