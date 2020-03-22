@@ -185,12 +185,16 @@ table td, table th {
     <div id="page-wrap">
         <p id="header">INVOICE</p>
         <div id="identity">
-            <p style="display:inline-block;">{{ user }} <br>
-                123 Appleville Street <br>
-                Appleville <br/><br/>
-                Phone: 123-456-789
+            <p style="display:inline-block;"><strong>{{ user.first_name }} {{ user.last_name }}</strong><br>
+                {% if user.phone_number %}
+                    Phone: {{user.phone_number }}<br/>
+                {% endif%}
+                <br/>
+                {{ user.address1 }}<br/>
+                {{ user.address2 }}<br/>
+                {{ user.country }}<br/>
             </p>
-            <div id="logo"><img id="image" src="{% static "img/logo2.png" %}" alt="logo"/></div>
+            {% comment %} <div id="logo"><img id="image" src="http://{{ host }}{% static 'img/logo2.png' %}" alt="logo goes here"/></div> {% endcomment %}
         </div>
 
         <div style="clear:both"></div>
@@ -228,7 +232,7 @@ table td, table th {
                 <th class="center">Total</th>
 
             </tr>
-            {% for item in invoice_items %}
+            {% for item in invoice_items reversed %}
                 <tr class="item-row">
 		      <td class="item-name" colspan="2"><div><p>{{ item.item }}</p></div></td>
 
@@ -268,7 +272,7 @@ table td, table th {
 
 		<div id="terms">
 		  <h5>Terms</h5>
-		  <p>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</p>
+		  <p>{{invoice.invoice_terms }}</p>
 		</div>
 
 	</div>

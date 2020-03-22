@@ -41,3 +41,30 @@
     margin: 1% 0;
 
 }
+
+/* Invoice Detail View Styles */
+
+.table {
+    display: table;
+    margin-top: 4em;
+    margin-bottom: 0;
+}
+.table-row {
+    display: table-row;
+}
+.table-cell {
+    display: table-cell;
+    /* padding: 10px; */
+    border: 1px solid black;
+}
+.table-row:nth-child(even){
+    background: lightblue;
+}
+
+.invoice-menu {
+    list-style: none;
+}
+
+.invoice-menu li {
+    margin-bottom:0.8rem;
+}

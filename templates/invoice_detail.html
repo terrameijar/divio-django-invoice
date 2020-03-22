@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
     <section>
     <div class="invoice-detail-header">
         <h1>Invoice</h1>
 
-        <span><a class="btn btn-secondary" href="{% url 'generate_pdf' invoice.pk  %}">Generate PDF</a></span>
+        {% comment %} <span><a class="btn btn-secondary" href="{% url 'generate_pdf' invoice.pk  %}">Generate PDF</a></span><br> {% endcomment %}
+        {% comment %} <span><a class="btn btn-secondary" href="{% url 'invoice-edit' invoice.pk  %}">Edit Invoice</a></span> {% endcomment %}
+        <ul class="invoice-menu">
+            <li><a class="btn btn-info" href="{% url 'invoice-edit' invoice.pk  %}">Edit Invoice</a></li>
+            <li><a class="btn btn-info" href="{% url 'generate_pdf' invoice.pk  %}">Generate PDF</a></li>
+        </ul>
     </div>
         <article>
             <table class="invoice table">
@@ -17,9 +23,22 @@
                 <tfoot></tfoot>
                 <tbody>
                     <tr>
-                        <td colspan=2>{{ user }} TODO: Add fullname here</td>
+                        <td colspan=4>
+                            <div style="max-height:120px; overflow:hidden;">
+                                <img class="float-right img-fluid" style="border:1px solid red; height:70%;" src="{{ user.company_logo.url }}"><br>
 
-                        <td colspan=3>{{ client }}<br/><br/>
+                                <strong>{{ user.get_full_name }}</strong> <br>
+                                {{ user.address1 }}<br>
+                                {{ user.address2 }}<br>
+                                {{ user.country }}<br>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>TO: <strong>{{ client }}</strong><br/><br/>
                             {{client.company}}  <br/>
                             {{client.address1}} <br/>
                             {{client.address2}} <br/>
@@ -34,8 +53,8 @@
                         <th>Tax</th>
                         <th>Subtotal</th>
                     </tr>
-                    <!-- Add a for loop here to dynamically add invoice items -->
-                    {% for item in invoice_items %}
+
+                    {% for item in invoice_items reversed %}
                         <tr>
                             <td> {{ item.item }} </td>
                             <td> {{ item.quantity }} </td>
