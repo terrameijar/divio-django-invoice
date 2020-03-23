@@ -5,11 +5,6 @@ from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-# class InvoiceManager(models.Manager):
-#     def get_invoice_items(self):
-#         return self.items.all()
-
-
 class Client(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
@@ -44,8 +39,9 @@ class Invoice(models.Model):
     invoice_terms = models.TextField(
         blank=True,
         default="NET 30 Days. Finance Charge of 1.5% will be \
-            made on unpaid balances after 30 days."
+            made on unpaid balances after 30 days.",
     )
+
     class Meta:
         verbose_name: "Invoice"
         verbose_name_plural: "Invoices"  # noqa F821
@@ -59,16 +55,12 @@ class Invoice(models.Model):
     def __repr__(self):
         return f"<Invoice: {self.client} - {self.title}>"
 
-    # @property
     def get_invoice_total(self):
-        # return f'${self.invoice_total}'
         total = 0
         total = sum([item.subtotal() for item in self.items.all()])
-        # self.invoice_total = total
         return total
 
     def save(self, *args, **kwargs):
-        #  TODO: Figure out why this doesn't always work
         self.invoice_total = self.get_invoice_total()
         super().save(*args, **kwargs)
 
@@ -86,7 +78,6 @@ class InvoiceItem(models.Model):
         verbose_name_plural: "Invoice Items"
 
     def __str__(self):
-        # return self.item
         return f"{self.item} - {self.subtotal()}"
 
     def __repr__(self):
@@ -96,12 +87,5 @@ class InvoiceItem(models.Model):
         return self.quantity * self.rate
 
     def save(self, *args, **kwargs):
-        # Add a call to update invoice total here
-        # When creating new invoices in the django admin,
-        # invoice totals are not calculated
-        # super().save(*args, **kwargs)
-        # self.invoice.get_invoice_total()
-
-        # super().save(*args, **kwargs)
         self.invoice.save()
         super().save(*args, **kwargs)
