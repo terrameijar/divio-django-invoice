@@ -123,7 +123,7 @@ class InvoiceCreateView(LoginRequiredMixin, CreateView):
 
 
 class InvoiceUpdateView(LoginRequiredMixin, UpdateView):
-    fields = ["title","client", "invoice_terms"]
+    fields = ["title", "client", "invoice_terms"]
     template_name = "edit_invoice.html"
 
     def get_queryset(self):
