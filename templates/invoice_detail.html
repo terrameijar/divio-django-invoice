@@ -25,8 +25,9 @@
                     <tr>
                         <td colspan=4>
                             <div style="max-height:120px; overflow:hidden;">
+                            {% if user.company_logo %}
                                 <img class="float-right img-fluid" style="border:1px solid red; height:70%;" src="{{ user.company_logo.url }}"><br>
-
+                            {% endif %}
                                 <strong>{{ user.get_full_name }}</strong> <br>
                                 {{ user.address1 }}<br>
                                 {{ user.address2 }}<br>

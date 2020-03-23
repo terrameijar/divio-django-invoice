@@ -4,10 +4,10 @@
 
 {% block content %}
     <h2> Edit Invoice</h2>
-    <form action="" method="POST">{% csrf_token %}
+    <form action="" method="POST">{% csrf_token %}>
         {{ form|crispy }}
         <h3>Invoice Items</h3>
-        {{ invoice_items|crispy formset }}
+        {{ invoice_items|crispy}}
         <input type="submit" value="Save"/>
     </form>
 
