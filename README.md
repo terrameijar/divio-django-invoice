@@ -63,7 +63,7 @@ Django invoices runs in a docker container and uses a Postgres 9.x image. Before
 
 ## Release History
 
-+ 0.0.0
++ 0.0.1
   + Work in progress
 
 ## Meta
