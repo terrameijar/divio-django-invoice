@@ -11,12 +11,12 @@
     padding:0;
 }
 
-.card{
-    transistion: 0.2s;
+.popout-card{
+    transition: 0.2s;
     cursor: pointer;
 }
 
-.card:hover{
+.popout-card:hover{
     transform: scale(1.025, 1.025);
     -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
     -moz-box-shadow:  -1px 9px 40px -12px rgba(0,0,0,0.75);
@@ -41,6 +41,7 @@
     margin: 1% 0;
 
 }
+
 
 /* Invoice Detail View Styles */
 
@@ -67,4 +68,14 @@
 
 .invoice-menu li {
     margin-bottom:0.8rem;
+}
+
+
+/* Client Detail View Styles */
+.client-invoices-table{
+    margin-top:0;
+}
+
+.client-detail-card{
+    margin-bottom:1.5rem;
 }

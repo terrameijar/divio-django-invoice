@@ -15,7 +15,7 @@
                 {% for invoice in recent_invoices %}
                     <div class="col-sm invoice-card text-center">
                         <a href="{% url 'invoice-detail' invoice.pk %}">
-                            <div class="card">
+                            <div class="card popout-card">
                                 <h5 class="card-header">{{ invoice.client }}</h5>
                                 <div class="card-body">
 
