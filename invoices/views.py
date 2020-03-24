@@ -205,6 +205,18 @@ class ClientDetailView(LoginRequiredMixin, DetailView):
         else:
             return Client.objects.none()
 
+    def get_invoices_set(self):
+        if self.request.user.is_authenticated:
+            return Invoice.objects.filter(user=self.request.user)
+        else:
+            return Invoice.objects.none()
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        invoices = self.get_invoices_set()
+        data["invoices"] = invoices
+        return data
+
 
 class ClientUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "edit_client.html"
