@@ -199,6 +199,18 @@ class ViewsLoggedInTests(TestCase):
             created_by=self.user,
         )
 
+        self.client2 = Client.objects.create(
+            first_name="Jane",
+            last_name="Doe",
+            email="doej@example.com",
+            company="XYZ Company",
+            address1="1234 Paradise Lane",
+            address2="Good Street",
+            country="Zimbabwe",
+            phone_number="+263771811111",
+            created_by=self.user,
+        )
+
         self.invoice = Invoice.objects.create(
             title="Test Invoice 1",
             user=self.user,
@@ -261,6 +273,12 @@ class ViewsLoggedInTests(TestCase):
         response = self.client.get(reverse("client-detail", args=[self.client1.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "client_detail.html")
+        search_query = """<table class="table table-hover client-invoices-table">"""
+        self.assertContains(response.content.decode(), text=search_query , html=True)
+
+    def test_new_client_does_not_have_invoices_billed_to_them(self):
+        response = self.client.get(reverse("client-detail", args=[self.client2.id]))
+        self.assertNotIn("You have not billed this customer yet.", response.content.decode())
 
     def test_client_delete_view(self):
         response = self.client.get(reverse("client-delete", args=[self.client1.id]))
