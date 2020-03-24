@@ -199,6 +199,11 @@ class ClientListView(LoginRequiredMixin, ListView):
 class ClientDetailView(LoginRequiredMixin, DetailView):
     template_name = "client_detail.html"
 
+    def get_object(self):
+        client = super().get_object()
+        return client
+
+
     def get_queryset(self):
         if self.request.user.is_authenticated:
             return Client.objects.filter(created_by=self.request.user)
@@ -207,7 +212,7 @@ class ClientDetailView(LoginRequiredMixin, DetailView):
 
     def get_invoices_set(self):
         if self.request.user.is_authenticated:
-            return Invoice.objects.filter(user=self.request.user)
+            return Invoice.objects.filter(client=self.get_object())
         else:
             return Invoice.objects.none()
 
