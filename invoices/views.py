@@ -203,7 +203,6 @@ class ClientDetailView(LoginRequiredMixin, DetailView):
         client = super().get_object()
         return client
 
-
     def get_queryset(self):
         if self.request.user.is_authenticated:
             return Client.objects.filter(created_by=self.request.user)

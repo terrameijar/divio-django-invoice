@@ -274,11 +274,13 @@ class ViewsLoggedInTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "client_detail.html")
         search_query = """<table class="table table-hover client-invoices-table">"""
-        self.assertContains(response.content.decode(), text=search_query , html=True)
+        self.assertIn(search_query, response.content.decode())
 
     def test_new_client_does_not_have_invoices_billed_to_them(self):
         response = self.client.get(reverse("client-detail", args=[self.client2.id]))
-        self.assertNotIn("You have not billed this customer yet.", response.content.decode())
+        self.assertIn(
+            "You have not billed this customer yet.", response.content.decode()
+        )
 
     def test_client_delete_view(self):
         response = self.client.get(reverse("client-delete", args=[self.client1.id]))
@@ -350,20 +352,3 @@ class ViewsLoggedInNewUserTests(TestCase):
     def test_empty_invoice_list_view(self):
         response = self.client.get(reverse("invoice-list"))
         self.assertContains(response, "You have not created any invoices yet.")
-
-
-# TODO: Add form tests
-# TODO: Test user/client/invoice exists at desired location
-# TODO: Test view accessible by name
-# TODO: Test View uses correct template
-# TODO: Test lists all invoices/clients/users/invoice-items
-# TODO: Test redirects
-#     def test_redirect_if_not_logged_in(self):
-#         response = self.client.get(reverse('my-borrowed'))
-#         self.assertRedirects(response,
-#                              '/accounts/login/?next=/catalog/mybooks/')
-
-# TODO: Test user is logged in
-# Check our user is logged in
-#         self.assertEqual(str(response.context['user']), 'testuser1')
-# TODO: Test that no invoices/users/clients/items created initially
