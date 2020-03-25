@@ -48,7 +48,7 @@ Django invoices runs in a docker container and uses a Postgres 9.x image. Before
 Vuyisile Ndlovu – [@terrameijar](https://twitter.com/TerraMeijar)
 [vuyisile.com](https://vuyisile.com)
 
-Distributed under the *GNU GENERAL PUBLIC LICENSE* license. See ``LICENSE`` for more information.
+Distributed under the *GNU GENERAL PUBLIC LICENSE* license. See [``LICENSE``](LICENSE) for more information.
 
 [https://github.com/terrameijar/](https://github.com/terrameijar/)
 
