@@ -27,7 +27,7 @@ InvoiceItemsFormset = inlineformset_factory(
 )
 
 
-class HomePage(LoginRequiredMixin, ListView):
+class HomePage(ListView):
     template_name = "home.html"
     context_object_name = "invoices"
 
