@@ -291,7 +291,7 @@ class ViewsLoggedInTests(TestCase):
 class ViewsLoggedOutTests(TestCase):
     def test_homepage_view(self):
         response = self.client.get(reverse("home"))
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
     def test_invoice_list_view(self):
         response = self.client.get(reverse("invoice-list"))
