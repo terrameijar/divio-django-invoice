@@ -42,11 +42,14 @@ jobs:
           name: Run tests
           command: |
             docker-compose run web coverage run manage.py test -v 3
+
+      - run:
+          name: Calculate Coverage
+          command: |
             docker-compose run web coverage report
             docker-compose run web coverage html
             docker-compose run web coverage xml
             docker-compose run web codecov -t $codecov_token
-
       - store_artifacts:
           path: htmlcov
 
