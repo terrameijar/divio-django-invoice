@@ -2,3 +2,6 @@
 omit = addons/*
 
 [report]
+
+[xml]
+output = coverage.xml
