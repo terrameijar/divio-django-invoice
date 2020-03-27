@@ -28,3 +28,7 @@ settings.json
 # Misc
 geckodriver.log
 project-TODOs.py
+
+# Coverage files
+htmlcov/
+.coverage
