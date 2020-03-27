@@ -1,5 +1,7 @@
 
 version: 2
+orbs:
+  codecov: codecov/codecov@1.0.2
 jobs:
   lint:
     working_directory: ~/django-invoices
@@ -49,7 +51,9 @@ jobs:
             docker-compose run web coverage report
             docker-compose run web coverage html
             docker-compose run web coverage xml
-            docker-compose run web codecov -t $codecov_token
+            docker-compose run web codecov -t $CODECOV_TOKEN
+      - codecov/upload:
+          file: coverage.xml
       - store_artifacts:
           path: htmlcov
 
