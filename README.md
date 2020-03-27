@@ -7,6 +7,7 @@ A Django Powered Invoice Generator
 > A free and simple invoicing solution.
 
 [![terrameijar](https://circleci.com/gh/terrameijar/divio-django-invoice.svg?style=shield)](https://circleci.com/gh/terrameijar/divio-django-invoice)
+[![codecov](https://codecov.io/gh/terrameijar/divio-django-invoice/branch/master/graph/badge.svg)](https://codecov.io/gh/terrameijar/divio-django-invoice)
 
 This invoice generator is a Django powered online tool to build PDF invoices from your web browser using a ready made template.
 
