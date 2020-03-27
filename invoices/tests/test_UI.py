@@ -17,7 +17,7 @@ class TestInvoicingApp(StaticLiveServerTestCase):
 
     def test_landing_page_load(self):
         self.driver.get(self.base_url)
-        self.assertEqual(self.driver.title, "Log in to example.com")
+        self.assertEqual(self.driver.title, "Invoices Landing Page")
 
     @unittest.skip("This view isn't complete yet")
     def test_new_invoice_can_be_created(self):
