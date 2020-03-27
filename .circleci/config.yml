@@ -41,7 +41,12 @@ jobs:
       - run:
           name: Run tests
           command: |
-            docker-compose run web python manage.py test -v 3
+            docker-compose run web coverage run manage.py test -v 3
+            docker-compose run web coverage report
+            docker-compose run web coverage html
+      - store_artifacts:
+          path: htmlcov
+
 
 workflows:
   version: 2
