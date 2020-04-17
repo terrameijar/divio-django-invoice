@@ -4,6 +4,7 @@ https://control.divio.com/api/v1/apps/serve/aldryn-django/2.2.11.2/f9763028-b602
 https://control.divio.com/api/v1/apps/serve/aldryn-sso/1.7.0/3ef75ae5-729a-4c44-ac3e-fa5950511e90/aldryn-sso-1.7.0.tar.gz#egg=aldryn-sso==1.7.0
 # </INSTALLED_ADDONS>
 
+aldryn-client==2.3.5
 asgiref==3.2.3
 astroid==2.3.3
 autopep8==1.4.4
