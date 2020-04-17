@@ -70,10 +70,9 @@ jobs:
 workflows:
   version: 2
   build_and_test:
-    filters:
-      branches:
-        only:
-          - develop
     jobs:
       - lint
-      - test-django-invoices
+      - test-django-invoices:
+          filters:
+            branches:
+              only: develop
