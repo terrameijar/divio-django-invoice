@@ -59,8 +59,10 @@ jobs:
       - run:
           name: "Download and install Divio CLI tool"
           command: |
-            # docker-compose run web pip install divio-cli
-            docker-compose run web divio --help
+            docker-compose run web divio login $DIVIO_ACCOUNT
+            # docker-compose run web divio --help
+            # docker-compose run web divio project deploy --remote-id <website id>
+            docker-compose run web divio project deploy-log--remote-id <website id>
       - codecov/upload:
           file: coverage.xml
       - store_artifacts:
