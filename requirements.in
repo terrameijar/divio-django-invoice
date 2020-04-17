@@ -16,7 +16,7 @@ cffi==1.13.2
 codecov==2.0.22
 coverage==5.0.3
 cssselect2==0.2.2
-divio-cli==3.6.0
+divio-cli==3.5.1
 defusedxml==0.6.0
 django-crispy-forms==1.8.1
 django-phonenumber-field==4.0.0
