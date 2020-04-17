@@ -33,6 +33,9 @@ RUN unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
 # Add ChromeDriver to the PATH
 ENV PATH $CHROMEDRIVER_DIR:$PATH
 
+# Add divio-cli to container
+RUN pip install divio-cli==3.5.1 aldryn-client==2.3.5
+
 # <NPM>
 # </NPM>
 
@@ -47,8 +50,8 @@ COPY addons-dev /app/addons-dev/
 RUN pip-reqs compile && \
     pip-reqs resolve && \
     pip install \
-        --no-index --no-deps \
-        --requirement requirements.urls
+    --no-index --no-deps \
+    --requirement requirements.urls
 # </PYTHON>
 
 # <SOURCE>

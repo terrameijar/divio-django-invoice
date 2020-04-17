@@ -4,7 +4,6 @@ https://control.divio.com/api/v1/apps/serve/aldryn-django/2.2.11.2/f9763028-b602
 https://control.divio.com/api/v1/apps/serve/aldryn-sso/1.7.0/3ef75ae5-729a-4c44-ac3e-fa5950511e90/aldryn-sso-1.7.0.tar.gz#egg=aldryn-sso==1.7.0
 # </INSTALLED_ADDONS>
 
-aldryn-client==2.3.5
 asgiref==3.2.3
 astroid==2.3.3
 autopep8==1.4.4
@@ -16,7 +15,6 @@ cffi==1.13.2
 codecov==2.0.22
 coverage==5.0.3
 cssselect2==0.2.2
-divio-cli==3.5.1
 defusedxml==0.6.0
 django-crispy-forms==1.8.1
 django-phonenumber-field==4.0.0
