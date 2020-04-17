@@ -57,31 +57,15 @@ jobs:
           name: "Print branch info"
           command: echo ${CIRCLE_BRANCH}
       - run:
-          name: "Download and install Divivo CLI tool"
+          name: "Download and install Divio CLI tool"
           command: |
-            python3.6 -m venv venv
-            . venv/bin/activate
-            pip install divio-cli
-            divio project list
+            docker-compose run web pip install divio-cli
+            docker-compose run web divio project list
       - codecov/upload:
           file: coverage.xml
       - store_artifacts:
           path: htmlcov
 
-  # branch-info:
-  #   steps: # Steps that comprise the branch-info' job
-  #     - checkout
-
-  #     - run:
-  #         name: "Print branch info"
-  #         command: echo ${CIRCLE_BRANCH}
-  #     - run:
-  #         name: "Download and install Divivo CLI tool"
-  #         command: |
-  #           python3.6 -m venv venv
-  #           . venv/bin/activate
-  #           pip install divio-cli
-  #           divio project list
 
 workflows:
   version: 2
