@@ -62,7 +62,7 @@ jobs:
             docker-compose run web divio login $DIVIO_ACCOUNT
             # docker-compose run web divio --help
             # docker-compose run web divio project deploy --remote-id <website id>
-            docker-compose run web divio project deploy-log --remote-id $DJANGO_INVOICES_ID
+            docker-compose run web divio project deploy-log
       - codecov/upload:
           file: coverage.xml
       - store_artifacts:
