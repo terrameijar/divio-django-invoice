@@ -57,7 +57,7 @@ jobs:
           name: "Print branch info"
           command: echo ${CIRCLE_BRANCH}
       - run:
-          name: "Download and install Divio CLI tool"
+          name: "Deploy to Divio Cloud test server"
           command: |
             docker-compose run web /bin/bash -c "divio login $DIVIO_ACCOUNT; divio project deploy test --remote-id $DJANGO_INVOICES_ID"
       - codecov/upload:
